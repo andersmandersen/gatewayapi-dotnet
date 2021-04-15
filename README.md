@@ -101,13 +101,32 @@ CancelResult cancelResult = gatewayAPIHandler.CancelScheduledMessage(result.Ids[
 string result = cancelResult.Status // (Can either return failed or success)
 ```
 
+### Parsing webhooks
+You can easily parse webhooks sent from GatewayAPI to your server using the Webhook class.
+
+```C#
+[HttpPost]
+public IActionResult Catch()
+{
+    var webhookHandler = new GatewayAPIWebhookHandler("secret");
+    var webhook = webhookHandler.ParseFromRequest(Request);
+
+    if (webhook is WebhookDeliveryStatus)
+    {
+        WebhookDeliveryStatus test = (WebhookDeliveryStatus)webhook;
+        Console.WriteLine(test.status);
+    } else if (webhook is WebhookIncomingMessage) {
+        WebhookIncomingMessage test = (WebhookIncomingMessage)webhook;
+        Console.WriteLine(test.message);
+    }
+
+    return Ok();
+}
+```
+
+All full example can be seen in "/samples/Webhook"
+
+
 ## 📎 Contact
 
 If you find and issue, please create a issue. You can at any time reach out to me on [twitter](https://twitter.com/snuswdk)
-
-
-# Todo: 
-
-* Setup respository - Private, then publich
-
-https://github.com/nickdnk/gatewayapi-php

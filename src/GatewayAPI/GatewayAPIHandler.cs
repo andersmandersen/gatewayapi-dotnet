@@ -77,7 +77,7 @@ namespace GatewayAPI
         /// </summary>
         /// <param name="messageId"></param>
         /// <returns></returns>
-        public CancelResult CancelScheduledMessage(int messageId)
+        public CancelResult CancelScheduledMessage(long messageId)
         {
             IRestResponse response = this.Request(RestSharp.Method.DELETE, $"mtsms/{messageId}");
             return CancelResult.ParseResponse(messageId, response.StatusCode);            

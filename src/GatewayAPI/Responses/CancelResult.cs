@@ -11,7 +11,7 @@ namespace GatewayAPI.Responses
 {
     public class CancelResult
     {
-        public int MessageId { get; set; }
+        public long MessageId { get; set; }
         public string Status { get; set; }
 
         /// <summary>

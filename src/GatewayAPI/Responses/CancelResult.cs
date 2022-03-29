@@ -19,7 +19,7 @@ namespace GatewayAPI.Responses
         /// </summary>
         /// <param name="response"></param>
         /// <returns></returns>
-        public static CancelResult ParseResponse(int messageId, HttpStatusCode status)
+        public static CancelResult ParseResponse(long messageId, HttpStatusCode status)
         {
             return new CancelResult
             {

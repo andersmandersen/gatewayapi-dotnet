@@ -5,9 +5,9 @@ namespace GatewayAPI.Responses
 {
     public class WebhookIncomingMessage : IWebhookResponse
     {
-        public int id { get; set; }
+        public long id { get; set; }
         public long msisdn { get; set; }
-        public int receiver{ get; set; }
+        public int receiver { get; set; }
         public string message { get; set; }
         public int senttime { get; set; }
         public string webhook_label { get; set; }

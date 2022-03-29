@@ -5,7 +5,7 @@ namespace GatewayAPI.Responses
 {
     public class WebhookDeliveryStatus : IWebhookResponse
     {
-        public int id { get; set; }
+        public long id { get; set; }
         public long msisdn { get; set; }
         public double time { get; set; }
         public string status { get; set; }

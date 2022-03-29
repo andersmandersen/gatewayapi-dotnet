@@ -6,7 +6,7 @@ namespace GatewayAPI.Responses
 {
     public class Result
     {
-        public List<int> Ids { get; set; }
+        public List<long> Ids { get; set; }
 
         /// <summary>
         /// Parse response from GatewayAPI into Result
